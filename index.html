@@ -1,65 +1,128 @@
 <!DOCTYPE html>
 <!-- saved from url=(0029)https://junshutang.github.io/ -->
 <html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><style type="text/css">
-.anticon {
-  display: inline-block;
-  color: inherit;
-  font-style: normal;
-  line-height: 0;
-  text-align: center;
-  text-transform: none;
-  vertical-align: -0.125em;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
-.anticon > * {
-  line-height: 1;
-}
-
-.anticon svg {
-  display: inline-block;
-}
-
-.anticon::before {
-  display: none;
-}
-
-.anticon .anticon-icon {
-  display: block;
-}
-
-.anticon[tabindex] {
-  cursor: pointer;
-}
-
-.anticon-spin::before,
-.anticon-spin {
-  display: inline-block;
-  -webkit-animation: loadingCircle 1s infinite linear;
-  animation: loadingCircle 1s infinite linear;
-}
-
-@-webkit-keyframes loadingCircle {
-  100% {
-    -webkit-transform: rotate(360deg);
-    transform: rotate(360deg);
+  /* 全局基础样式 */
+  body {
+    font-family: 'Lato', Verdana, Helvetica, sans-serif;
+    font-size: 15px;
+    line-height: 1.6;
+    color: #333;
+    background-color: #fff;
+    margin: 0;
   }
-}
 
-@keyframes loadingCircle {
-  100% {
-    -webkit-transform: rotate(360deg);
-    transform: rotate(360deg);
+  /* 链接样式优化 */
+  a {
+    color: #0066cc;
+    text-decoration: none;
+    transition: all 0.2s ease;
   }
-}
+  a:hover {
+    color: #004499;
+    text-decoration: underline;
+  }
 
-name {
-  font-size: 24px;  /* 增加字体大小 */
-  font-weight: bold;  /* 加粗显示 */
-  display: inline-block;  /* 确保样式正确应用 */
-}
+  /* 个人名字样式 */
+  name {
+    font-size: 30px;
+    font-weight: 700;
+    display: inline-block;
+    color: #111;
+    margin-bottom: 5px;
+    letter-spacing: -0.5px;
+  }
+
+  /* 标题 Heading 样式 */
+  heading {
+    font-size: 22px;
+    font-weight: 700;
+    color: #111;
+    display: block;
+    margin-top: 30px;
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #f0f0f0;
+    letter-spacing: 0.5px;
+  }
+
+  /* 论文标题样式 */
+  papertitle {
+    font-size: 17px;
+    font-weight: 700;
+    color: #1a1a1a;
+    display: block;
+    margin-bottom: 6px;
+    line-height: 1.35;
+  }
+
+  /* 作者列表中的自己 */
+  strong {
+    color: #000;
+    font-weight: 700;
+  }
+
+  /* 图片通用样式：圆角与阴影 */
+  img {
+    border-radius: 6px;
+    transition: all 0.3s ease;
+  }
+
+  /* 论文缩略图悬停效果 */
+  td[style*="25%"] img {
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+  }
+  td[style*="25%"] img:hover {
+    box-shadow: 0 5px 15px rgba(0,0,0,0.15);
+    transform: translateY(-2px);
+  }
+
+  /* 头像悬停效果 */
+  .hoverZoomLink:hover {
+    box-shadow: 0 5px 15px rgba(0,0,0,0.15);
+    transform: scale(1.02);
+  }
+
+  /* Spotlight 标签优化 */
+  span[style*="color: red"] {
+    color: #c92a2a !important; /* 更深沉的红色 */
+    background-color: #fff5f5;
+    padding: 2px 8px;
+    border-radius: 12px;
+    font-size: 0.85em;
+    font-weight: bold;
+    border: 1px solid #ffc9c9;
+  }
+
+  /* 调整表格单元格间距 */
+  td {
+    padding-top: 10px !important;
+    padding-bottom: 10px !important;
+  }
+
+  /* 针对论文列表的特定调整 */
+  table tbody tr td[style*="75%"] {
+    font-size: 15px;
+    line-height: 1.6;
+    vertical-align: top !important; /* 顶对齐通常看起来更整洁 */
+    padding-top: 20px !important; /* 增加一点顶部间距 */
+  }
+
+  /* News 列表优化 */
+  ul {
+    padding-left: 20px;
+    margin-top: 5px;
+  }
+  li {
+    margin-bottom: 6px;
+    color: #444;
+  }
+
+  /* Ant Design Icon 样式保留 (如果需要) */
+  .anticon { display: inline-block; color: inherit; font-style: normal; line-height: 0; text-align: center; text-transform: none; vertical-align: -0.125em; text-rendering: optimizeLegibility; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
+  .anticon > * { line-height: 1; }
+  .anticon svg { display: inline-block; }
+  .anticon::before { display: none; }
+  .anticon .anticon-icon { display: block; }
 </style>
 
   <title> Jinkun Hao (郝锦坤) </title>
@@ -68,6 +131,7 @@ name {
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="google-site-verification" content="A2nXUugMvMH5Xy0yLCrnLyU0jySYHhQGTZwju8WLFCk">
   <link rel="stylesheet" type="text/css" href="./static/stylesheet.css">
+  <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
   <link rel="dns-prefetch" href="https://fonts.googleapis.com/">
   <link rel="dns-prefetch" href="https://fonts.gstatic.com/">
   <link rel="dns-prefetch" href="https://www.google-analytics.com/">
@@ -124,6 +188,29 @@ name {
 
           <tr>
             <td style="padding:30px;width:25%;vertical-align:middle">
+              <img src="./static/RoboVIP.png" width="240" height="140">
+            </td>
+                        <td style="padding:20px;width:75%;vertical-align:middle">
+                          <papertitle>RoboVIP: Multi-View Video Generation with Visual Identity Prompting Augments Robot Manipulation</papertitle>
+                          <br>
+                          Boyang Wang, Haoran Zhang, Shujie Zhang, <strong>Jinkun Hao</strong>, Mingda Jia, Qi Lv,  Yucheng Mao, Zhaoyang Lyu, Jia Zeng, Xudong Xu, Jiangmiao Pang
+              <br>
+              <strong><em>Arxiv</em>, 2026 </strong>
+                          <br>
+              <a href="https://mesatask.github.io/">project page</a>
+                          /
+                          <a href="https://arxiv.org/abs/2509.22281">paper</a>
+                          /
+                          <a href="https://github.com/InternRobotics/MesaTask">code</a>
+                          <p></p>
+                          <p></p>
+                        </td>
+                      </tr>
+
+          </tr>
+
+          <tr>
+            <td style="padding:30px;width:25%;vertical-align:middle">
               <img src="./static/MesaTask.jpg" width="240" height="140">
             </td>
                         <td style="padding:20px;width:75%;vertical-align:middle">
@@ -131,13 +218,13 @@ name {
                           <br>
                           <strong>Jinkun Hao</strong>*, Naifu Liang*, Zhen Luo*, Xudong Xu‡, Weipeng Zhong, Ran Yi, Yichen Jin, Zhaoyang Lyu, Feng Zheng, Lizhuang Ma, Jiangmiao Pang
               <br>
-              <strong><em>NeurIPS</em>, 2025 (<span style="color: red;">Spotlight</span>)</strong>
+              <strong><em>NeurIPS</em>, 2025 (<span style="color: red;">Spotlight (Top 2%)</span>)</strong>
                           <br>
-              <a href="https://mesatask.github.io/">project page</a>
+              <a href="https://robovip.github.io/RoboVIP/">project page</a>
                           /
-                          <a href="https://arxiv.org/abs/2509.22281">paper</a>
+                          <a href="https://arxiv.org/abs/2601.05241">paper</a>`
                           /
-                          <a href="https://github.com/InternRobotics/MesaTask">code</a>
+                          <a href="https://robovip.github.io/RoboVIP/">code</a>
                           <p></p>
                           <p></p>
                         </td>
