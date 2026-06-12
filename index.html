@@ -61,6 +61,12 @@
     font-weight: 700;
   }
 
+  /* 顶部个人介绍 */
+  .intro {
+    font-size: 14px;
+    line-height: 1.55;
+  }
+
   /* 图片通用样式：圆角与阴影 */
   img {
     border-radius: 6px;
@@ -68,10 +74,26 @@
   }
 
   /* 论文缩略图悬停效果 */
-  td[style*="25%"] img {
+  .publication-image {
+    padding: 16px 8px 16px 0 !important;
+    width: 280px !important;
+    min-width: 280px;
+    vertical-align: middle;
+  }
+  .publication-image + td {
+    width: auto !important;
+    padding-left: 18px !important;
+  }
+  .publication-image img {
+    width: 280px;
+    max-width: 100%;
+    height: auto;
+    display: block;
+  }
+  .publication-image img {
     box-shadow: 0 2px 5px rgba(0,0,0,0.05);
   }
-  td[style*="25%"] img:hover {
+  .publication-image img:hover {
     box-shadow: 0 5px 15px rgba(0,0,0,0.15);
     transform: translateY(-2px);
   }
@@ -143,7 +165,7 @@
       <td style="padding:0px">
         <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
           <tr style="padding:0px">
-            <td style="padding:2.5%;width:63%;vertical-align:middle">
+            <td class="intro" style="padding:2.5%;width:63%;vertical-align:middle">
               <p style="text-align:center">
                 <name>Jinkun Hao (郝锦坤) </name>  <br> <br>
               </p>
@@ -151,8 +173,13 @@
               </p>
               <p style="font-family:verdana"> I had a wonderful research experience at <a href="https://www.shlab.org.cn/">Shanghai AI Laboratory</a>, collaborating with <a href="https://sheldontsui.github.io/">Xudong Xu</a> and <a href="https://oceanpang.github.io/">Jiangmiao Pang</a>. Before that, I worked as a research intern at <a href="https://open.youtu.qq.com/">Tencent Youtu Lab</a>, collaborating with <a href="https://zhangzjn.github.io/">Jiangning Zhang</a> and <a href="https://junshutang.github.io/">Junshu Tang</a>.
               </p>
-              <p style="font-family:verdana"> I currently focused on Generative Simulation and Embodied AI. My current work involves leveraging video generation models to bridge the gap between embodied agents and environment interactions, utilizing egocentric-view data to enhance the interaction and generalization capabilities of world models and VLAs. Simultaneously, I am building an automated 3D world generation system powered by code agents.  
+              <p style="font-family:verdana"> My research focuses on generative simulation and embodied AI, with three current directions:
               </p>
+              <ul style="font-family:verdana">
+                <li><strong>Embodied AI and dexterous-hand VLAs:</strong> exploring how large-scale egocentric-view videos can improve dexterous-hand policies for interaction, manipulation, and generalization.</li>
+                <li><strong>Interactive world models:</strong> building scalable world simulators for multi-agent and egocentric interactions, including <a href="#egosim">EgoSim</a> and <a href="#metaworld">MetaWorld</a>.</li>
+                <li><strong>Scalable embodied environment generation:</strong> creating simulation-ready 3D environments and embodied interaction assets through agentic 3D design, including <a href="#mesatask">MesaTask</a>, <a href="#code-as-room">Code-as-Room</a>, <a href="#stable">STABLE</a>, and <a href="#robovip">RoboVIP</a>.</li>
+              </ul>
  
  
               <p style="text-align:center">
@@ -190,9 +217,9 @@
         <!-- <p> (* indicates joint first authors) </p> -->
         <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
 
-          <tr>
-            <td style="padding:30px;width:25%;vertical-align:middle">
-              <img src="./static/EgoSim.png" width="240" height="140">
+          <tr id="egosim">
+            <td class="publication-image">
+              <img src="./static/EgoSim.png">
             </td>
             <td style="padding:20px;width:75%;vertical-align:middle">
               <papertitle>EgoSim: Egocentric World Simulator for Embodiment Interaction Generation</papertitle>
@@ -211,9 +238,9 @@
             </td>
           </tr>
 
-          <tr>
-            <td style="padding:30px;width:25%;vertical-align:middle">
-              <img src="./static/MetaWorld.png" width="240" height="140">
+          <tr id="metaworld">
+            <td class="publication-image">
+              <img src="./static/MetaWorld.png">
             </td>
             <td style="padding:20px;width:75%;vertical-align:middle">
               <papertitle>MetaWorld: Scaling Multi-Agent Video World Model from Single-view Video Data</papertitle>
@@ -232,9 +259,9 @@
             </td>
           </tr>
 
-          <tr>
-            <td style="padding:30px;width:25%;vertical-align:middle">
-              <img src="./static/Code-as-Room.png" width="240" height="140">
+          <tr id="code-as-room">
+            <td class="publication-image">
+              <img src="./static/Code-as-Room.png">
             </td>
             <td style="padding:20px;width:75%;vertical-align:middle">
               <papertitle>Code-as-Room: Generating 3D Rooms from Top-Down View Images via Agentic Code Synthesis</papertitle>
@@ -255,9 +282,9 @@
             </td>
           </tr>
 
-          <tr>
-            <td style="padding:30px;width:25%;vertical-align:middle">
-              <img src="./static/STABLE.png" width="240" height="140">
+          <tr id="stable">
+            <td class="publication-image">
+              <img src="./static/STABLE.png">
             </td>
             <td style="padding:20px;width:75%;vertical-align:middle">
               <papertitle>STABLE: Simulation-Ready Tabletop Layout Generation via a Semantics–Physics Dual System</papertitle>
@@ -274,9 +301,9 @@
             </td>
           </tr>
 
-          <tr>
-            <td style="padding:30px;width:25%;vertical-align:middle">
-              <img src="./static/RoboVIP.png" width="240" height="140">
+          <tr id="robovip">
+            <td class="publication-image">
+              <img src="./static/RoboVIP.png">
             </td>
                         <td style="padding:20px;width:75%;vertical-align:middle">
                           <papertitle>RoboVIP: Multi-View Video Generation with Visual Identity Prompting Augments Robot Manipulation</papertitle>
@@ -297,9 +324,9 @@
 
           </tr>
 
-          <tr>
-            <td style="padding:30px;width:25%;vertical-align:middle">
-              <img src="./static/MesaTask.jpg" width="240" height="140">
+          <tr id="mesatask">
+            <td class="publication-image">
+              <img src="./static/MesaTask.jpg">
             </td>
                         <td style="padding:20px;width:75%;vertical-align:middle">
                           <papertitle>MesaTask: Towards Task-Driven Tabletop Scene Generation via 3D Spatial Reasoning</papertitle>
@@ -321,8 +348,8 @@
           </tr>
 
           <tr>
-            <td style="padding:30px;width:25%;vertical-align:middle">
-              <img src="./static/Stylized-Face.png" width="240" height="140">
+            <td class="publication-image">
+              <img src="./static/Stylized-Face.png">
             </td>
                         <td style="padding:20px;width:75%;vertical-align:middle">
                           <papertitle>Stylized-Face: A Million-level Stylized Face Dataset for Face Recognition</papertitle>
@@ -339,8 +366,8 @@
           </tr>
 
           <tr>
-            <td style="padding:30px;width:25%;vertical-align:middle">
-              <img src="./static/ID-Sculpt.jpg" width="240" height="140">
+            <td class="publication-image">
+              <img src="./static/ID-Sculpt.jpg">
             </td>
                         <td style="padding:20px;width:75%;vertical-align:middle">
                           <papertitle>ID-Sculpt: ID-aware 3D Head Generation from Single In-the-wild Portrait Image</papertitle>
@@ -362,8 +389,8 @@
           </tr>
 
           <tr>
-            <td style="padding:30px;width:25%;vertical-align:middle">
-              <img src="./static/clothdreamer.png" width="240" height="140">
+            <td class="publication-image">
+              <img src="./static/clothdreamer.png">
             </td>
                         <td style="padding:20px;width:75%;vertical-align:middle">
                           <papertitle>ClotheDreamer: Text-guided garment generation with 3D gaussians</papertitle>
@@ -385,8 +412,8 @@
           </tr>
 
           <tr>
-            <td style="padding:30px;width:25%;vertical-align:middle">
-              <img src="./static/semi-3ddet.png" width="240" height="140">
+            <td class="publication-image">
+              <img src="./static/semi-3ddet.png">
             </td>
                         <td style="padding:20px;width:75%;vertical-align:middle">
                           <papertitle>Semi-supervised 3d object detection via adaptive pseudo-labeling</papertitle>
@@ -406,8 +433,8 @@
           
 
           <tr>
-            <td style="padding:30px;width:25%;vertical-align:middle">
-              <img src="./static/Confident_Semantic.png" width="240" height="140">
+            <td class="publication-image">
+              <img src="./static/Confident_Semantic.png">
             </td>
                         <td style="padding:20px;width:75%;vertical-align:middle">
                           <papertitle>Confident Semantic Ranking Loss for Part Parsing</papertitle>
@@ -448,5 +475,3 @@
     </tr>
   </tbody></table>
   
-
-
