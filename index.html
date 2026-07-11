@@ -139,6 +139,94 @@
     color: #444;
   }
 
+  /* Experience */
+  .experience-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    margin: 4px 0 10px;
+  }
+  .experience-item {
+    min-width: 0;
+    padding: 10px 22px 12px;
+    text-align: center;
+  }
+  .experience-item + .experience-item {
+    border-left: 1px solid #ededed;
+  }
+  .experience-logo {
+    height: 66px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 12px;
+  }
+  .experience-logo img {
+    display: block;
+    width: auto;
+    max-width: 100%;
+    max-height: 60px;
+    border-radius: 0;
+  }
+  .experience-logo--robbyant img {
+    max-height: 66px;
+    transform: scale(1.5);
+  }
+  .experience-company {
+    display: inline-block;
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 1.35;
+  }
+  .experience-focus {
+    margin: 4px 0 0;
+    color: #555;
+    font-size: 14px;
+    line-height: 1.4;
+  }
+  .experience-period {
+    margin: 5px 0 0;
+    color: #888;
+    font-size: 13px;
+    line-height: 1.35;
+  }
+
+  @media (max-width: 600px) {
+    .experience-grid {
+      grid-template-columns: 1fr;
+    }
+    .experience-item {
+      display: grid;
+      grid-template-columns: 112px minmax(0, 1fr);
+      grid-template-rows: auto auto auto;
+      column-gap: 18px;
+      padding: 16px 8px;
+      text-align: left;
+    }
+    .experience-item + .experience-item {
+      border-left: 0;
+      border-top: 1px solid #ededed;
+    }
+    .experience-logo {
+      grid-row: 1 / 4;
+      height: 56px;
+      margin: 0;
+    }
+    .experience-logo img,
+    .experience-logo--robbyant img {
+      max-height: 54px;
+    }
+    .experience-company {
+      align-self: end;
+    }
+    .experience-focus {
+      align-self: start;
+      margin-top: 3px;
+    }
+    .experience-period {
+      margin-top: 3px;
+    }
+  }
+
   /* Ant Design Icon 样式保留 (如果需要) */
   .anticon { display: inline-block; color: inherit; font-style: normal; line-height: 0; text-align: center; text-transform: none; vertical-align: -0.125em; text-rendering: optimizeLegibility; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
   .anticon > * { line-height: 1; }
@@ -213,6 +301,34 @@
                   </tr>
                 </tbody>
         </table>
+
+        <heading>Experience</heading>
+        <div class="experience-grid">
+          <div class="experience-item">
+            <a class="experience-logo experience-logo--robbyant" href="https://www.robbyant.com/" aria-label="Ant Group - Robbyant">
+              <img src="./static/Robbyant Ai Logo PNG SVG Vector.svg" alt="Robbyant logo">
+            </a>
+            <a class="experience-company" href="https://www.robbyant.com/">Ant Group - Robbyant</a>
+            <p class="experience-period">2026 - Present</p>
+            <p class="experience-focus">Dexterous VLA</p>
+          </div>
+          <div class="experience-item">
+            <a class="experience-logo" href="https://www.shlab.org.cn/" aria-label="Shanghai AI Laboratory">
+              <img src="./static/shanghaiailab.png" alt="Shanghai AI Laboratory logo">
+            </a>
+            <a class="experience-company" href="https://www.shlab.org.cn/">Shanghai AI Laboratory</a>
+            <p class="experience-period">2024 - 2026</p>
+            <p class="experience-focus">Scene Generation / World Model</p>
+          </div>
+          <div class="experience-item">
+            <a class="experience-logo" href="https://open.youtu.qq.com/#/open" aria-label="Tencent Youtu Lab">
+              <img src="./static/youtu.png" alt="Tencent Youtu Lab logo">
+            </a>
+            <a class="experience-company" href="https://open.youtu.qq.com/#/open">Tencent Youtu Lab</a>
+            <p class="experience-period">2023 - 2024</p>
+            <p class="experience-focus">3D Avatar</p>
+          </div>
+        </div>
  
         <heading>Publications</heading>
         <!-- <p> (* indicates joint first authors) </p> -->
