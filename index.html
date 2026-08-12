@@ -38,9 +38,9 @@
     font-weight: 700;
     color: #111;
     display: block;
-    margin-top: 30px;
-    margin-bottom: 20px;
-    padding-bottom: 10px;
+    margin-top: 22px;
+    margin-bottom: 14px;
+    padding-bottom: 8px;
     border-bottom: 1px solid #f0f0f0;
     letter-spacing: 0.5px;
   }
@@ -51,8 +51,11 @@
     font-weight: 700;
     color: #1a1a1a;
     display: block;
-    margin-bottom: 6px;
+    margin-bottom: 2px;
     line-height: 1.35;
+  }
+  papertitle + br {
+    display: none;
   }
 
   /* 作者列表中的自己 */
@@ -67,6 +70,19 @@
     line-height: 1.55;
   }
 
+  .profile-photo-cell {
+    width: 28%;
+    max-width: 28%;
+    text-align: center;
+  }
+  .profile-photo {
+    display: block;
+    width: 100%;
+    max-width: 230px;
+    height: auto;
+    margin: 0 auto;
+  }
+
   /* 图片通用样式：圆角与阴影 */
   img {
     border-radius: 6px;
@@ -75,9 +91,9 @@
 
   /* 论文缩略图悬停效果 */
   .publication-image {
-    padding: 16px 8px 16px 0 !important;
-    width: 280px !important;
-    min-width: 280px;
+    padding: 6px 8px 6px 0 !important;
+    width: 260px !important;
+    min-width: 260px;
     vertical-align: middle;
   }
   .publication-image + td {
@@ -85,10 +101,15 @@
     padding-left: 18px !important;
   }
   .publication-image img {
-    width: 280px;
+    width: 260px;
     max-width: 100%;
-    height: auto;
+    height: 125px;
+    object-fit: contain;
+    object-position: left center;
     display: block;
+  }
+  .publication-image + td p:empty {
+    display: none;
   }
   .publication-image img {
     box-shadow: 0 2px 5px rgba(0,0,0,0.05);
@@ -124,9 +145,10 @@
   /* 针对论文列表的特定调整 */
   table tbody tr td[style*="75%"] {
     font-size: 15px;
-    line-height: 1.6;
-    vertical-align: top !important; /* 顶对齐通常看起来更整洁 */
-    padding-top: 20px !important; /* 增加一点顶部间距 */
+    line-height: 1.4;
+    vertical-align: middle !important;
+    padding-top: 6px !important;
+    padding-bottom: 6px !important;
   }
 
   /* News 列表优化 */
@@ -143,7 +165,7 @@
   .experience-grid {
     display: grid;
     grid-template-columns: repeat(3, minmax(0, 1fr));
-    margin: 4px 0 10px;
+    margin: 2px 0 6px;
   }
   .experience-item {
     min-width: 0;
@@ -191,6 +213,13 @@
   }
 
   @media (max-width: 600px) {
+    .profile-photo-cell {
+      width: 35%;
+      max-width: 35%;
+    }
+    .profile-photo {
+      max-width: 180px;
+    }
     .experience-grid {
       grid-template-columns: 1fr;
     }
@@ -248,12 +277,12 @@
 </head>
 
 <body data-new-gr-c-s-check-loaded="14.1193.0" data-gr-ext-installed="">
-  <table style="width:100%;max-width:800px;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
+  <table style="width:100%;max-width:1080px;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
     <tr style="padding:0px">
       <td style="padding:0px">
         <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
           <tr style="padding:0px">
-            <td class="intro" style="padding:2.5%;width:63%;vertical-align:middle">
+            <td class="intro" style="padding:2.5%;width:72%;vertical-align:middle">
               <p style="text-align:center">
                 <name>Jinkun Hao (郝锦坤) </name>  <br> <br>
               </p>
@@ -276,8 +305,8 @@
                 <a href="https://scholar.google.com/citations?user=CJNkSiUAAAAJ&hl=zh-CN">Google Scholar</a>
               </p>
             </td>
-            <td style="padding:2.5%;width:40%;max-width:40%">
-             <img style="width:100%;max-width:100%" alt="profile photo" src="./static/picture.png" class="hoverZoomLink">
+            <td class="profile-photo-cell" style="padding:2.5%;vertical-align:middle">
+             <img alt="profile photo" src="./static/picture.png" class="profile-photo hoverZoomLink">
             </td>
           </tr>
         </tbody></table>
